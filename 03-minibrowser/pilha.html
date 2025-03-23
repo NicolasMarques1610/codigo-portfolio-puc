@@ -1,0 +1,41 @@
+<script>
+    // LIFO - Stack - Last In First Out
+    console.log('[Pilha/Stack]');
+    class BrowserHistoryStack {
+        constructor() {
+            this.cursor = 0;
+            this.data = [];
+        }
+
+        push(item) {
+            this.cursor++;
+            this.data.push(item);
+        }
+
+        back() {
+            this.cursor--;
+            // this.data.pop();
+        }
+
+        clear() {
+            this.cursor = 0;
+            this.data = [];
+        }
+
+        print() {
+            console.log('Cursor ', this.cursor);
+            console.log('Itens atuais ', this.data);
+        }
+    }
+
+    const history = new BrowserHistoryStack();
+    history.push('https://google.com');
+    history.push('https://youtube.com');
+    history.push('https://instagram.com');
+    history.print();
+    // Retira o último, tipo um voltar (.pop())
+    history.back();
+    history.print();
+    history.clear();
+    history.print();
+</script>

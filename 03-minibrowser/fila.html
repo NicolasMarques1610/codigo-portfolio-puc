@@ -1,0 +1,51 @@
+<script>
+    // FIFO - Queue - First In First Out
+    console.log('[Fila/Queue]');
+    // Qualquer tipo de dado
+    // Uma atrás da outra, ordem importa
+    // Quem entra primeiro, sai primeiro
+
+    let fila = [
+        'script.js',
+        'style.css',
+        'imagem.png'
+    ];
+    // Adicione alguém na fila (no final)
+    fila.push('invencivel.jpeg');
+    // Remove o primeiro da fila
+    fila.shift();
+
+    // ========================
+    // Receita para criar filas
+    // ========================
+    // - enqueue: adicionar alguém na fila, enfileirar
+    // - dequeue: remover alguém da fila, desenfileirar
+    class Queue { // Class: Receita para criar objetos
+        constructor() {
+            this.data = [];
+        }
+
+        enqueue(value) {
+            this.data.push(value);
+        }
+        dequeue() {
+            this.data.shift();
+        }
+        print() {
+            console.log(this.data);
+        }
+    }
+
+    // Design do código First
+    let requests = new Queue();
+    // Open Closed
+    // Open: Aberto para extensão
+    // Closed: Fechado para modificação
+    requests.enqueue('script.js');
+    requests.enqueue('style.css');
+    requests.enqueue('imagem.png');
+    requests.enqueue('invencivel.jpeg');
+    requests.print();
+    requests.dequeue();
+    
+</script>
