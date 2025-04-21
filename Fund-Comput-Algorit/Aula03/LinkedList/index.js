@@ -35,8 +35,7 @@ class LinkedList {
         }
 
         let node = this.head;
-        for (let i = 0; i < index && node != null; i++) {
-            console.log(i);
+        for (let i = 0; i < index && node != null; i++) { // percorre a lista até o índice desejado
             node = node.next;
         }
         return node;
